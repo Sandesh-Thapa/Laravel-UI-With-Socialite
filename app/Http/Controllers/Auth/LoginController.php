@@ -57,27 +57,43 @@ class LoginController extends Controller
 
 
     // Facebook
-    // public function redirectToFacebook(){
-    //     return Socialite::driver('facebook')->redirect();
-    // }
+    public function redirectToFacebook(){
+        return Socialite::driver('facebook')->redirect();
+    }
 
-    // public function handleFacebookCallback () {
-    //     $user = Socialite::driver('facebook')->user();
+    public function handleFacebookCallback () {
+        $user = Socialite::driver('facebook')->user();
     
-    //     // $user->token
-    // }
+        // $user->token
+    }
 
 
     // // Github
-    // public function redirectToGithub(){
-    //     return Socialite::driver('github')->redirect();
-    // }
+    public function redirectToGithub(){
+        return Socialite::driver('github')->redirect();
+    }
 
-    // public function handleGithubCallback () {
-    //     $user = Socialite::driver('github')->user();
-    
-    //     // $user->token
-    // }
+    public function handleGithubCallback () {
+        $user = Socialite::driver('github')->user();
+        $this->_registerOrLoginUser($user);
+        return redirect()->route('home');
+    }
+
+    // Linkedin
+    public function redirectToLinkedin(){
+        return Socialite::driver('linkedin')->redirect();
+    }
+
+    public function handleLinkedinCallback () {
+        $user = Socialite::driver('linkedin')->user();
+        $this->_registerOrLoginUser($user);
+        return redirect()->route('home');
+    }
+
+    //twitter
+    public function redirectToTwitter(){
+        return Socialite::driver('twitter')->redirect();
+    }
 
     protected function _registerOrLoginUser($data) {
         $user = User::where('email', '=', $data->email)->first();
