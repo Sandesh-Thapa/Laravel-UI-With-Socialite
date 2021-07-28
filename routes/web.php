@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SocialMediaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,30 +18,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 
 
 // Sociolite routes
 //google
-Route::get('/login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
-Route::get('/login/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
+Route::get('/login/google', [SocialMediaController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('/login/google/callback', [SocialMediaController::class, 'handleGoogleCallback']);
 
 //facebook
-Route::get('/login/facebook', [App\Http\Controllers\Auth\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
-Route::get('/login/facebook/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallback']);
+Route::get('/login/facebook', [SocialMediaController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('/login/facebook/callback', [SocialMediaController::class, 'handleFacebookCallback']);
 
 //github
-Route::get('/login/github', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGithub'])->name('login.github');
-Route::get('/login/github/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
+Route::get('/login/github', [SocialMediaController::class, 'redirectToGithub'])->name('login.github');
+Route::get('/login/github/callback', [SocialMediaController::class, 'handleGithubCallback']);
 
 //Linkedin
-Route::get('/login/linkedin', [App\Http\Controllers\Auth\LoginController::class, 'redirectToLinkedin'])->name('login.linkedin');
-Route::get('/login/linkedin/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleLinkedinCallback']);
+Route::get('/login/linkedin', [SocialMediaController::class, 'redirectToLinkedin'])->name('login.linkedin');
+Route::get('/login/linkedin/callback', [SocialMediaController::class, 'handleLinkedinCallback']);
 
-//Linkedin
-Route::get('/login/twitter', [App\Http\Controllers\Auth\LoginController::class, 'redirectToLinkedin'])->name('login.twitter');
+//twitter
+Route::get('/login/twitter', [SocialMediaController::class, 'redirectToLinkedin'])->name('login.twitter');
 
 
 
