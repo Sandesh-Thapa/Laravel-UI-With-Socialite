@@ -56,11 +56,11 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
                                 <h6 class="text-center">Login With Social Media</h6>
-                                <a href="{{ route('login.google') }}" class="btn btn-danger btn-block"><i class="fab fa-google"></i>&nbsp;&nbsp;Login With Google</a>
-                                <a href="{{ route('login.facebook') }}" class="btn btn-primary btn-block"><i class="fab fa-facebook-f"></i>&nbsp;&nbsp;Login With Facebook</a>
-                                <a href="{{ route('login.github') }}" class="btn btn-dark btn-block"><i class="fab fa-github"></i>&nbsp;&nbsp;Login With Github</a>
-                                <a href="{{ route('login.twitter') }}" class="btn btn-primary btn-block"><i class="fab fa-twitter"></i>&nbsp;&nbsp;Login With Twitter</a>
-                                <a href="{{ route('login.linkedin') }}" class="btn btn-primary btn-block"><i class="fab fa-linkedin-in"></i>&nbsp;&nbsp;Login With Linkedin</a>
+                                <a href="login/google" class="btn btn-danger btn-block"><i class="fab fa-google"></i>&nbsp;&nbsp;Login With Google</a>
+                                <a href="login/facebook" class="btn btn-primary btn-block"><i class="fab fa-facebook-f"></i>&nbsp;&nbsp;Login With Facebook</a>
+                                <a href="login/github"  class="btn btn-dark btn-block"><i class="fab fa-github"></i>&nbsp;&nbsp;Login With Github</a>
+                                <a href="login/twitter" class="btn btn-primary btn-block"><i class="fab fa-twitter"></i>&nbsp;&nbsp;Login With Twitter</a>
+                                <a href="login/linkedin" class="btn btn-primary btn-block"><i class="fab fa-linkedin-in"></i>&nbsp;&nbsp;Login With Linkedin</a>
                             </div>
                         </div>
 
